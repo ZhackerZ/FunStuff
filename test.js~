@@ -1,6 +1,6 @@
 'use strict';
 
-var circularBuffer = function(maxSize){
+var Queue = function(maxSize){
 	this.start  = 0;
 	this.end = 0;
 	this.n = 0;
@@ -8,7 +8,7 @@ var circularBuffer = function(maxSize){
 	this.table = [];
 }
 
-circularBuffer.prototype = {
+Queue.prototype = {
 	push : function(item){
 		if(this.end==this.size) this.end = 0;
 		this.table[this.end] = item;
@@ -33,7 +33,7 @@ circularBuffer.prototype = {
 	}
 };
 
-var test = new circularBuffer(3);
+var test = new Queue(3);
 
 for(let i=0;i<5;i++){
 	test.push(i);
