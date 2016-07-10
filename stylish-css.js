@@ -6,5 +6,5 @@ app.use(express.static(process.argv[3]));
 
 
 
-console.log(process.argv[2]);
+//console.log(process.argv[2]);
 app.listen(process.argv[2]);
